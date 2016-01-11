@@ -44,7 +44,6 @@ std::list<T> mergeSort(std::list<T> origlist){
     if(origlist.size() == 1){
         return origlist;
     }
-    
     //Split the list
     std::list<T> left;
     std::list<T> right;
@@ -61,11 +60,9 @@ std::list<T> mergeSort(std::list<T> origlist){
         }
         i++;
     }
-    
     //Call mergeSort recursively on each half of the list
     left = mergeSort(left);
     right = mergeSort(right);
-    
     //Merge the result of the call and return the sorted list
     return _merge(left,right);
 }
