@@ -4,7 +4,7 @@
 //
 //  Polymorphic: Type can be any numeric type.
 //
-//  Created by Christopher Gleeson on 1/16/2016.
+//  Created by Christopher Gleeson on 1/11/16.
 //  Copyright © 2016 Christopher Gleeson. All rights reserved.
 //
 
@@ -44,11 +44,10 @@ std::list<T> mergeSort(std::list<T> origlist){
     if(origlist.size() == 1){
         return origlist;
     }
-    //Split the list
+    //Make sublists
     std::list<T> left;
     std::list<T> right;
     //Populate the "left" and "right" sublists
-    int i = 1;
     while(!origlist.empty()){
         //The "odd vs even" trick is nice to split an array of unknown size
         if(i % 2 == 0){ //Any number % 2 == 0 is even, else its odd.
@@ -58,7 +57,6 @@ std::list<T> mergeSort(std::list<T> origlist){
             right.push_back(origlist.front());
             origlist.pop_front();
         }
-        i++;
     }
     //Call mergeSort recursively on each half of the list
     left = mergeSort(left);
