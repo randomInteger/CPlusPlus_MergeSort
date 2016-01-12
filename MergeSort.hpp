@@ -48,6 +48,7 @@ std::list<T> mergeSort(std::list<T> origlist){
     std::list<T> left;
     std::list<T> right;
     //Populate the "left" and "right" sublists
+    int i = 0; //counter for the even/odd tracking
     while(!origlist.empty()){
         //The "odd vs even" trick is nice to split an array of unknown size
         if(i % 2 == 0){ //Any number % 2 == 0 is even, else its odd.
@@ -57,6 +58,7 @@ std::list<T> mergeSort(std::list<T> origlist){
             right.push_back(origlist.front());
             origlist.pop_front();
         }
+        i++;
     }
     //Call mergeSort recursively on each half of the list
     left = mergeSort(left);
